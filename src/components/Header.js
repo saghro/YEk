@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/Button';
-import { LaptopIcon, MenuIcon } from './icons';
+import { LaptopIcon, MenuIcon, MoonIcon, SunIcon } from './icons'; // Import MoonIcon and SunIcon
 import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function Header() {
@@ -22,7 +22,7 @@ export default function Header() {
                 <MenuIcon className="h-5 w-5" />
             </Button>
             <Button variant="outline" size="sm" onClick={toggleTheme}>
-                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                {theme === 'light' ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
             </Button>
         </header>
     );
