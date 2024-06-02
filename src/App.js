@@ -5,6 +5,7 @@ import './App.css';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import { ThemeProvider } from './contexts/ThemeContext';
+import Contactus from './pages/Contactus';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Header />
                     <Routes>
                         <Route path="/" element={<Main />} />
+                        <Route path='/contactus' element={<Contactus/>}/>
                     </Routes>
                     <Footer />
                 </div>

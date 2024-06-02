@@ -3,13 +3,18 @@ import { ThemeContext } from '../contexts/ThemeContext';
 
 const Contactus = () => {
   const { theme } = useContext(ThemeContext);
+  const backgroundImageUrl = 'https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   return (
     <div className={theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}>
-      <div className={theme === 'dark' ? 'bg-gray-700 py-16 px-4 sm:px-6 lg:px-8' : 'bg-gray-200 py-16 px-4 sm:px-6 lg:px-8'}>
-        <div className="max-w-lg mx-auto text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl">CONTACT</h2>
-          <p className="mt-4 text-gray-500">PLEASE CONTACT US SO WE CAN HELP YOU</p>
+      <div
+        className={theme === 'dark' ? 'bg-gray-700 py-36 px-4 sm:px-6 lg:px-8 relative' : 'bg-gray-200 py-36 px-4 sm:px-6 lg:px-8 relative'}
+        style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '600px' }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="max-w-lg mx-auto text-center relative z-0 text-white h-20">
+          <h1 className='text-white text-6xl font-bold sm:text-4xl'>Contact Us</h1>
+          <p className="mt-4 text-gray-300">PLEASE CONTACT US SO WE CAN HELP YOU</p>
         </div>
       </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -41,26 +46,26 @@ const Contactus = () => {
           <input
             type="text"
             placeholder="Votre Nom*"
-            className="border border-gray-300 p-2 rounded sm:col-span-1"
+            className={`border ${theme === 'dark' ? 'border-gray-800 bg-gray-600 text-white' : 'border-gray-300 bg-white text-black'} p-2 rounded sm:col-span-1`}
           />
           <input
             type="text"
             placeholder="Société"
-            className="border border-gray-300 p-2 rounded sm:col-span-1"
+            className={`border ${theme === 'dark' ? 'border-gray-800 bg-gray-600 text-white' : 'border-gray-300 bg-white text-black'} p-2 rounded sm:col-span-1`}
           />
           <input
             type="email"
             placeholder="Email*"
-            className="border border-gray-300 p-2 rounded sm:col-span-1"
+            className={`border ${theme === 'dark' ? 'border-gray-800 bg-gray-600 text-white' : 'border-gray-300 bg-white text-black'} p-2 rounded sm:col-span-1`}
           />
           <input
             type="text"
             placeholder="Sujet*"
-            className="border border-gray-300 p-2 rounded sm:col-span-1"
+            className={`border ${theme === 'dark' ? 'border-gray-800 bg-gray-600 text-white' : 'border-gray-300 bg-white text-black'} p-2 rounded sm:col-span-1`}
           />
           <textarea
             placeholder="Votre Message*"
-            className="border border-gray-300 p-2 rounded sm:col-span-2 min-h-[120px]"
+            className={`border ${theme === 'dark' ? 'border-gray-800 bg-gray-600 text-white' : 'border-gray-300 bg-white text-black'} p-2 rounded sm:col-span-2 min-h-[120px]`}
           />
           <button
             type="submit"
