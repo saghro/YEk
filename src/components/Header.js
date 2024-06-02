@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/Button';
 import { LaptopIcon, MenuIcon } from './icons';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function Header() {
+    const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <header className="bg-gray-900 text-white py-4 px-6 md:px-8 flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
@@ -18,6 +20,9 @@ export default function Header() {
             </nav>
             <Button variant="outline" size="sm" className="md:hidden">
                 <MenuIcon className="h-5 w-5" />
+            </Button>
+            <Button variant="outline" size="sm" onClick={toggleTheme}>
+                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
             </Button>
         </header>
     );
