@@ -16,15 +16,15 @@ export default function ContactSection() {
                         </p>
                         <form className="space-y-4">
                             <div>
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name" className="name">Name</Label>
                                 <Input id="name" type="text" />
                             </div>
                             <div>
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="email" className="email">Email</Label>
                                 <Input id="email" type="email" />
                             </div>
                             <div>
-                                <Label htmlFor="message">Message</Label>
+                                <Label htmlFor="message" className="message">Message</Label>
                                 <Textarea id="message" />
                             </div>
                             <Button variant="primary" type="submit">
@@ -34,7 +34,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345092454!2d144.95373631531593!3d-37.816279742021614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xb69c1bdfd6381b3e!2sYour%20IT%20Consulting%20Office!5e0!3m2!1sen!2sus!4v1615206510016!5m2!1sen!2sus"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d40492.58593492475!2d3.0468978!3d50.631080600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sma!4v1717331663068!5m2!1sfr!2sma"
                             width="100%"
                             height="450"
                             allowFullScreen=""
