@@ -21,7 +21,7 @@ const footerSections = [
   {
     title: "Contact Info",
     links: [
-      { label: "43 Rue d'Aulnay, 95500 GONESSE", url: "#" },
+      { label: "43 Rue d'Aulnay, 95500 GONESSE", url: "google.com" },
       { label: "Email: contact@yekconseil.fr", url: "mailto:contact@yekconseil.fr" },
       { label: "Numéro : +33 1 39 85 91 68", url: "tel:+33139859168" },
     ],
