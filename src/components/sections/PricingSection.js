@@ -49,7 +49,7 @@ function PricingCard({ title, description, price, features, icon: Icon }) {
             <CardHeader>
                 <div className="flex items-center justify-center gap-2">
                     <Icon className="h-7 w-7 text-green-600" />
-                    <CardTitle className='text-center text-xl'>{title}</CardTitle>
+                    <CardTitle className='text-center text-xl text-black'>{title}</CardTitle>
                 </div>
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
@@ -57,7 +57,7 @@ function PricingCard({ title, description, price, features, icon: Icon }) {
                 <div className="text-4xl font-bold mb-2">{price}</div>
                 <ul className="space-y-2 mb-8">
                     {features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2">
+                        <li key={index} className="flex items-center gap-2 text-black">
                             <CheckIcon className="h-6 w-10 text-green-500" />
                             {feature}
                         </li>
