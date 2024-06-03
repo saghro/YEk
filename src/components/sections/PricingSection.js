@@ -1,46 +1,41 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/Card';
-import { Button } from '../ui/Button';
 import { CheckIcon } from '../icons';
+import { DatabaseIcon, CpuIcon, CodeIcon, ShieldIcon } from '../icons';
 
 export default function PricingSection() {
     return (
         <section className="py-12 md:py-16">
             <div className="container mx-auto px-4 md:px-6">
-                <h2 className="text-2xl md:text-3xl font-bold mb-8">Pricing</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h2 className="text-2xl text-center md:text-3xl font-bold mb-8">Services</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <PricingCard
-                        title="Starter"
-                        description="Perfect for small businesses"
-                        price="$99"
+                        title="Infrastructure"
                         features={[
-                            "IT infrastructure setup",
-                            "Software development",
-                            "Basic cybersecurity",
-                            "Data management",
+                            "Streamline your IT infrastructure for maximum efficiency",
                         ]}
+                        icon={CpuIcon}
                     />
                     <PricingCard
-                        title="Professional"
-                        description="For growing businesses"
-                        price="$199"
+                        title="Cybersecurity"
                         features={[
-                            "Advanced IT infrastructure",
-                            "Customized software solutions",
-                            "Comprehensive cybersecurity",
-                            "Advanced data management",
+                            "Protect your business from cyber threats with our security solutions",
                         ]}
+                        icon={ShieldIcon}
                     />
                     <PricingCard
-                        title="Enterprise"
-                        description="For large-scale businesses"
-                        price="$399"
+                        title="Software Development"
                         features={[
-                            "Fully managed IT infrastructure",
-                            "Enterprise-level software solutions",
-                            "Advanced cybersecurity and compliance",
-                            "Comprehensive data management and analytics",
+                            "Build custom software solutions to meet your unique needs",
                         ]}
+                        icon={CodeIcon}
+                    />
+                    <PricingCard
+                        title="Data Management"
+                        features={[
+                            "Optimize your data infrastructure for better insights and decision-making",
+                        ]}
+                        icon={DatabaseIcon}
                     />
                 </div>
             </div>
@@ -48,27 +43,26 @@ export default function PricingSection() {
     );
 }
 
-function PricingCard({ title, description, price, features }) {
+function PricingCard({ title, description, price, features, icon: Icon }) {
     return (
-        <Card>
+        <Card className='shadow-lg shadow-gray-600 hover:scale-125'>
             <CardHeader>
-                <CardTitle>{title}</CardTitle>
+                <div className="flex items-center justify-center gap-2">
+                    <Icon className="h-7 w-7 text-green-600" />
+                    <CardTitle className='text-center text-xl text-black'>{title}</CardTitle>
+                </div>
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="text-4xl font-bold mb-2">{price}</div>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">per month</p>
                 <ul className="space-y-2 mb-8">
                     {features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2">
-                            <CheckIcon className="h-4 w-4 text-green-500" />
+                        <li key={index} className="flex items-center gap-2 text-black">
+                            <CheckIcon className="h-6 w-10 text-green-500" />
                             {feature}
                         </li>
                     ))}
                 </ul>
-                <Button variant="primary" className="w-full">
-                    Get Started
-                </Button>
             </CardContent>
         </Card>
     );
