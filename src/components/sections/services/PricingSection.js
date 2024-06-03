@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/Card';
-import { CheckIcon } from '../icons';
-import { DatabaseIcon, CpuIcon, CodeIcon, ShieldIcon } from '../icons';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../ui/Card';
+import { CheckIcon } from '../../icons';
+import { DatabaseIcon, CpuIcon, CodeIcon, ShieldIcon } from '../../icons';
+import "./services.css"
 
 export default function PricingSection() {
     return (
@@ -45,7 +46,7 @@ export default function PricingSection() {
 
 function PricingCard({ title, description, price, features, icon: Icon }) {
     return (
-        <Card className='shadow-lg shadow-gray-600 hover:scale-125'>
+        <Card className='pricing-card'>
             <CardHeader>
                 <div className="flex items-center justify-center gap-2">
                     <Icon className="h-7 w-7 text-green-600" />
